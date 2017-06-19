@@ -35,21 +35,21 @@ class NoticeController < ApplicationController
         )
 
         Main.create(
-            :morning => main_menus.css('div.foodmenu1 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').text.strip,
-            :lunch => main_menus.css('div.foodmenu2 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').text.strip,
-            :dinner => main_menus.css('div.foodmenu3 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').text.strip
+            :morning => main_menus.css('div.foodmenu1 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').strip,
+            :lunch => main_menus.css('div.foodmenu2 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').strip,
+            :dinner => main_menus.css('div.foodmenu3 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').strip
         )
 
         Yangjin.create(
-            :morning => yangjin_menus.css('div.foodmenu1 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').text.strip,
-            :lunch => yangjin_menus.css('div.foodmenu2 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').text.strip,
-            :dinner => yangjin_menus.css('div.foodmenu3 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').text.strip
+            :morning => yangjin_menus.css('div.foodmenu1 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').strip,
+            :lunch => yangjin_menus.css('div.foodmenu2 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').strip,
+            :dinner => yangjin_menus.css('div.foodmenu3 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').strip
         )
 
         Yangsung.create(
-            :morning => yangsung_menus.css('div.foodmenu1 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').text.strip,
-            :lunch => yangsung_menus.css('div.foodmenu2 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').text.strip,
-            :dinner => yangsung_menus.css('div.foodmenu3 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').text.strip
+            :morning => yangsung_menus.css('div.foodmenu1 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').strip,
+            :lunch => yangsung_menus.css('div.foodmenu2 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').strip,
+            :dinner => yangsung_menus.css('div.foodmenu3 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').strip
         )
 
     end
