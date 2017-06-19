@@ -1,0 +1,2 @@
+class Yangsung < ApplicationRecord
+end

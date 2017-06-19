@@ -1,0 +1,2 @@
+class Crj < ApplicationRecord
+end

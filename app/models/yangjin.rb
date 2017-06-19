@@ -1,0 +1,2 @@
+class Yangjin < ApplicationRecord
+end
