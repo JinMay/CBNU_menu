@@ -29,9 +29,9 @@ class NoticeController < ApplicationController
 
 
         Crj.create(
-            :morning => crj_menus.css('li p')[0].text,
-            :lunch => crj_menus.css('li p')[1].text,
-            :dinner => crj_menus.css('li p')[2].text
+            :morning => crj_menus.css('li p')[0].text.gsub(',', "\n"),
+            :lunch => crj_menus.css('li p')[1].text.gsub(',', "\n"),
+            :dinner => crj_menus.css('li p')[2].text.gsub(',', "\n")
         )
 
         Main.create(
