@@ -24,8 +24,8 @@ class NoticeController < ApplicationController
 
         crj_menus = crj_data.css('div.food_week_box ul.on')
         main_menus = main_data.css('li#tab1c1 > ul.ul > li:nth-child(1)')
-        yangjin_menus = yangjin_data.css('li#tab1c2 > ul.ul > li:nth-child(1)')
-        yangsung_menus = yangsung_data.css('li#tab1c3 > ul.ul > li:nth-child(1)')
+        yangsung_menus = yangsung_data.css('li#tab1c2 > ul.ul > li:nth-child(1)')
+        yangjin_menus = yangjin_data.css('li#tab1c3 > ul.ul > li:nth-child(1)')
 
 
         Crj.create(
@@ -47,9 +47,9 @@ class NoticeController < ApplicationController
         )
 
         Yangsung.create(
-            :morning => yangsung_menus.css('div.foodmenu1 li').to_s.gsub('<li>', '').gsub('</li>', ", ").strip,
-            :lunch => yangsung_menus.css('div.foodmenu2 li').to_s.gsub('<li>', '').gsub('</li>', ", ").strip,
-            :dinner => yangsung_menus.css('div.foodmenu3 li').to_s.gsub('<li>', '').gsub('</li>', ", ").strip
+            :morning => yangsung_menus.css('div.foodmenu1 li').to_s.gsub('<li>', '').gsub('</li>', "").strip,
+            :lunch => yangsung_menus.css('div.foodmenu2 li').to_s.gsub('<li>', '').gsub('</li>', "").strip,
+            :dinner => yangsung_menus.css('div.foodmenu3 li').to_s.gsub('<li>', '').gsub('</li>', "").strip
         )
 
     end
