@@ -35,9 +35,9 @@ class NoticeController < ApplicationController
         )
 
         Main.create(
-            :morning => main_menus.css('div.foodmenu1 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').strip,
-            :lunch => main_menus.css('div.foodmenu2 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').strip,
-            :dinner => main_menus.css('div.foodmenu3 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').strip
+            :morning => main_menus.css('div.foodmenu1 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').gsub("\n", "").strip,
+            :lunch => main_menus.css('div.foodmenu2 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').gsub("\n", "").strip,
+            :dinner => main_menus.css('div.foodmenu3 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').gsub("\n", "").strip
         )
 
         Yangjin.create(
@@ -52,6 +52,12 @@ class NoticeController < ApplicationController
             :dinner => yangsung_menus.css('div.foodmenu3 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').strip
         )
 
+    end
+
+
+    def show
+        all = Main.all
+        render json: all
     end
 
 

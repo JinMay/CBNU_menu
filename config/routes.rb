@@ -6,4 +6,6 @@ Rails.application.routes.draw do
     post 'friend' => 'notice#friend'
     delete 'friend/:user_key' => 'notice#friend'
     delete 'chat_room/:user_key' => 'notice#chat_room'
+
+    # get 'show' => 'notice#show'
 end
