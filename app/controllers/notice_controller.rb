@@ -35,9 +35,9 @@ class NoticeController < ApplicationController
         )
 
         Main.create(
-            :morning => main_menus.css('div.foodmenu1 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').gsub("\n", "").strip,
-            :lunch => main_menus.css('div.foodmenu2 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').gsub("\n", "").strip,
-            :dinner => main_menus.css('div.foodmenu3 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').gsub("\n", "").strip
+            :morning => main_menus.css('div.foodmenu1 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').gsub("\n", "").gsub(" ", "\n").strip,
+            :lunch => main_menus.css('div.foodmenu2 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').gsub("\n", "").gsub(" ", "\n").strip,
+            :dinner => main_menus.css('div.foodmenu3 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').gsub("\n", "").gsub(" ", "\n").strip
         )
 
         Yangjin.create(
