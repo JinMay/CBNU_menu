@@ -13,6 +13,7 @@ class NoticeController < ApplicationController
         Yangsung.delete_all
 
         crj_url = 'http://www.cbhscrj.kr/food/list.do?menuKey=39'
+		# crj_url = 'http://www.cbhscrj.kr/food/list.do?date=2017.06.27&menuKey=39&currentPageNo=1'
         main_url = 'https://dorm.chungbuk.ac.kr/main/main.php'
         yangjin_url = 'https://dorm.chungbuk.ac.kr/main/main.php'
         yangsung_url = 'https://dorm.chungbuk.ac.kr/main/main.php'
@@ -35,9 +36,9 @@ class NoticeController < ApplicationController
         )
 
         Main.create(
-            :morning => main_menus.css('div.foodmenu1 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').gsub("\n", "").gsub(" ", "\n").strip,
-            :lunch => main_menus.css('div.foodmenu2 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').gsub("\n", "").gsub(" ", "\n").strip,
-            :dinner => main_menus.css('div.foodmenu3 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').gsub("\n", "").gsub(" ", "\n").strip
+            :morning => main_menus.css('div.foodmenu1 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').strip,
+            :lunch => main_menus.css('div.foodmenu2 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').strip,
+            :dinner => main_menus.css('div.foodmenu3 li').to_s.gsub('<li>', '').gsub('</li>', "").gsub('amp;', '').strip
         )
 
         Yangjin.create(
